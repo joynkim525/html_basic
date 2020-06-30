@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <title> Title for web</title>
+  <meta charset=“utf-8”>
+  <style type = "text/css"> -- define style
+    body {
+      text-allign: center;
+    }
+    ._body {
+      border: black solid 1px;
+      margin: 3px;
+    }
+    #middle {
+      width: 100%;
+      display: flex; -- display boxes felxible
+    }
+    aside {
+      flex: 1;
+      height: 600px;
+    }
+    content {
+      flex: 4;
+      height: 300px
+    }
+    section {
+      border: 2px solid black;
+    }
+    div {
+      width: 200px;
+    }
+    table {
+      width: 80%;
+      border: 1px solid #444444;
+      border-collapse: collapse;
+      }
+    th, td {
+      border: 1px solid #444444;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+<h1> main header </h1>
+<div id = "middle">
+  <aside class="_body">
+    <h3> unordered list below</h3>
+    <ul>
+      <li> making list </li>
+      <li> <a href="2.html"> making list with link </a></li>
+    </ul>
+    <h3> ordered list below </h3>
+    <ol>
+      <li> making list  </li>
+      <li><a href="2.html"> making list with link </a></li>
+    </ol>
+  </aside>
+  <content>
+  <section>
+    <p> <h3> start a paragraph </h3>
+      <br><br> <strong> making bold if it is important </strong>
+      <br><br> <u> text with underline </u>.
+      <br><br> end the paragraph</p>
+  </section>
+  <section>
+    <p style="margin-top:30px"> I'll make a table below <br>
+      <table>
+        <tr>
+          <th>1</th>
+          <td>1st row 1st col</td>
+          <td>1st row 2nd col</td>
+          <td>1st row 3rd col</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>2nd row 1st col</td>
+          <td>2nd row 2nd col</td>
+          <td>2nd row 3rd col</td>
+        </tr>
+      </table>
+    </p>
+    <br><br>
+    <img src="C:\Users\Jooyeon Kim\Desktop\web\tag.png"> remember tag!
+  </content>
+  </div>
+</body>
+</html>
