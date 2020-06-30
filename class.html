@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+  <title> Class </title>
+  <meta charset=“utf-8”>
+  <style type = "text/css">
+  body {
+    text-align: left;
+  }
+  ._body {
+    border: black solid 1px;
+    margin: 10px;
+  }
+  div {
+    width: 200px;
+  }
+  div#wapper {
+    width: 100%;
+    min-height: 100px;
+    margin: 0 auto
+  }
+  nav{
+    width: 15%;
+    min-height: 200px;
+    border: 2px dashed #bcbcbc;
+  }
+  div#middle {
+    width: 70%;
+    margin-left: 30px;
+  }
+  header {
+    height: 70px;
+    text-align: center;
+  }
+  content {
+    height: 300px;
+    margin-left: 30px;
+  }
+  content#ex {
+    width: 30%;
+  }
+  section {
+    border: 2px solid black;
+    padding-left: 10px;
+  }
+  nav, div#middle, content#ex{
+    float: left;
+  }
+
+  table {
+    width: 80%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+    }
+  th, td {
+    border: 1px solid #444444;
+    padding: 10px;
+  }
+  .it{
+    font-style: italic;
+  }
+</style>
+</head>
+
+<body>
+  <div id = "wapper">
+    <header><h1> OOP ; Object Oriented Programming </h1></header>
+    <nav>
+      <ul>
+        <li><a href =''> python basic </a></li>
+        <li><a href =''> R basic </a></li>
+        <li><a href =''> visualization </a></li>
+        <li><a href =''> crawling </a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id = "middle">
+    <content>
+      <ul>
+        <li> object = attribute + method </li>
+        <li> attribute := variable </li>
+        <li> method := function </li>
+      </ul>
+    </content>
+
+    <content>
+      <section>
+        <h2> define new class</h2>
+        <p><pre>
+        <strong>class</strong> class_name:<br>
+          attr_1 = ''     <span class = "it"># reset class(global) variable</span><br>
+          <strong>def</strong> __init__(self): # initial<br>
+            self.attr_2 = ''    <span class = "it"> # reset instance(local) variable</span><br>
+          <strong>def</strong> method_1(self, arg):<br>
+            class_name.attr_1(f(arg))<br>
+            self.attr_2(f(arg))<br>
+          </pre></p>
+      </section>
+    </content>
+
+    <content>
+      <h3> Example for function and class </h3>
+      <table>
+        <tr>
+          <th> function </th>
+          <th> class </th>
+        </tr>
+        <tr>
+          <td><pre>
+            <strong>def</strong> id_process(arg):<br>
+              if arg[7] == '1':<br>
+                year = '19'+ arg[:2]<br>
+                gend = '남성'<br>
+              elif arg[7] == '2':<br>
+                year = '19'+ arg[:2]<br>
+                gend = '여성'<br>
+              elif arg[7] == '3':<br>
+                year = '20'+ arg[:2]<br>
+                gend = '남성'<br>
+              elif arg[7] == '4':<br>
+                year = '20'+ arg[:2]<br>
+                gend = '여성'<br>
+              else:<br>
+                print('옳지 않은 id입니다.')<br>
+              month = arg[2:4]<br>
+              date = arg[4:6]<br>
+              return(print(year, month, date, gend))<br>
+              <br><br><br>
+          id_process('991013-20*****')<br>
+          1999 10 13 여성</pre></td>
+          <td><pre>
+            <strong>class</strong> ProcessIdc:<br>
+            id = ''<br>
+            <strong>def</strong> __init__(self, arg):<br>
+              self.id = arg<br>
+            <strong>def</strong> id_process(self):<br>
+              if self.id[7] == '1':<br>
+                self.year = '19'+ self.id[:2]<br>
+                self.gend = '남성'<br>
+              elif self.id[7] == '2':<br>
+                self.year = '19'+ self.id[:2]<br>
+                self.gend = '여성'<br>
+              elif self.id[7] == '3':<br>
+                self.year = '20'+ self.id[:2]<br>
+                self.gend = '남성'<br>
+              elif self.id[7] == '4':<br>
+                self.year = '20'+ self.id[:2]<br>
+                self.gend = '여성'<br>
+              else:<br>
+                print('옳지 않은 id입니다.')<br>
+              self.month = self.id[2:4]<br>
+              self.date = self.id[4:6]<br>
+              print(self.year, self.month, self.date, self.gend)<br>
+              <br><br><br>
+            id = ProcessIdc('010329-30*****')<br>
+            2001 03 29 남성</pre></td>
+        </tr>
+      </table>
+    </content>
+
+    <content>
+      <h2> Modify the class</h2>
+        <p>
+          case1) class_name.class_variable = 'new'<br>
+          <ul>
+            <li> instance: changed</li>
+            <li> class: changed</li>
+          </ul>
+          case2) instance_name.class_variable = 'new'<br>
+          <ul>
+            <li> instance: not changed</li>
+            <li> class: not changed</li>
+          </ul>
+          case3) class_name.instance_variable = 'new'<br>
+          <ul>
+            <li> instance: changed</li>
+            <li> class: changed</li>
+          </ul>
+          case4) instance_name.instance_variable = 'new'<br>
+          <ul>
+            <li> instance: changed</li>
+            <li> class: not dependet on instance</li>
+          </ul>
+          case5) class_name.instance_variable = 'new1' & instance_name.instance_variable = 'new2'<br>
+          <ul>
+            <li> instance: changed to <strong>new2</strong></li>
+            <li> class: changed to <strong>new1</strong></li>
+          </ul>
+          case5) class_name.__class_variable = 'new'
+            <span class = "it">(__class_variable is fixed)</span><br>
+          <ul>
+            <li> instance: not changed</li>
+            <li> class: changed</li>
+            <li> new instance: not changed</li>
+          </ul>
+          case6) instance_name.__class_variable = 'new'
+            <span class = "it">(__class_variable is fixed)</span><br>
+          <ul>
+            <li> instance: not changed</li>
+            <li> class: not changed</li>
+            <li> new instance: not changed</li>
+          </ul>
+        </p>
+    </content>
+    <content>
+      <section>
+        <h2>Inheritance</h2>
+        <p><pre>
+        <strong>class</strong> Parent:<br>
+          <strong>def</strong> __init__(self):<br>
+            self.attr_1 = ''    <span class = "it"> # reset instance(local) variable</span><br>
+          <strong>def</strong> method_1(self, arg):<br>
+            f(self.attr_1)<br>
+          <br><br>
+        <strong>class</strong> Child:<br>
+          <strong>def</strong> __init__(self):<br>
+            Parent.__init__(self, attr_1) <span class = "it"> # inheritance from Parent class / copy attributes and methods </span>
+            self. attr_2 = ''     <span class = "it"> # reset instance(local) variable</span><br>
+          <strong>def</strong> method_2(self):<br>
+            Parent.method_1(self)
+            f(self.att_2)
+        </pre></p>
+      </section>
+    </content>
+  </div>
+</body>
+</html>
